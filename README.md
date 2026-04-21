@@ -18,7 +18,7 @@ fine-tuned LLaMA 3.1 8B on the Spider Text-to-SQL dataset using QLoRA. the goal 
 - Kaggle T4 GPU
 
 ## prompt format
-
+```
 Task : Generate a SQL query based on the question and schema below.
 Schema
 {db_id}
@@ -26,7 +26,7 @@ Question
 {question}
 SQL
 {query}
-
+```
 ## training config
 
 | param | value |

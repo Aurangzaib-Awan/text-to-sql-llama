@@ -19,8 +19,7 @@ fine-tuned LLaMA 3.1 8B on the Spider Text-to-SQL dataset using QLoRA. the goal 
 
 ## prompt format
 
-Task
-Generate a SQL query based on the question and schema below.
+Task : Generate a SQL query based on the question and schema below.
 Schema
 {db_id}
 Question

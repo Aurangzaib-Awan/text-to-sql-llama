@@ -32,13 +32,13 @@ SQL
 | param | value |
 |---|---|
 | base model | meta-llama/Meta-Llama-3.1-8B |
-| epochs | 3 |
+| epochs | 3 | changed it to 1 cuz it was causing overfitting
 | batch size | 4 |
 | grad accum steps | 4 |
-| learning rate | 2e-4 |
+| learning rate | 1e-4 |
 | lora r | 16 |
 | lora alpha | 32 |
-| lora dropout | 0.05 |
+| lora dropout | 0.1 |  increase the droput rate from 0.05 to 0.1
 | max seq length | 512 |
 
 ## results

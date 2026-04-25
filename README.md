@@ -32,15 +32,16 @@ SQL
 | param | value |
 |---|---|
 | base model | meta-llama/Meta-Llama-3.1-8B |
-| epochs | 3 | changed it to 1 cuz it was causing overfitting
+| epochs | 1 |
 | batch size | 4 |
 | grad accum steps | 4 |
 | learning rate | 1e-4 |
 | lora r | 16 |
 | lora alpha | 32 |
-| lora dropout | 0.1 |  increase the droput rate from 0.05 to 0.1
+| lora dropout | 0.1 |
 | max seq length | 512 |
 
+> epochs reduced from 3 → 1 and dropout increased from 0.05 → 0.1 to address overfitting.
 ## results
 
 training loss went from ~0.70 → ~0.43 over 800+ steps. val loss started diverging a bit after step 300 (expected with small LoRA on a complex task).
@@ -52,6 +53,17 @@ training loss went from ~0.70 → ~0.43 over 800+ steps. val loss started diverg
  ### Mean token Accuracy 
   <img width="1365" height="781" alt="image" src="https://github.com/user-attachments/assets/6a7f10d8-22a3-4f8e-9775-0f7fb1d05c1a" />
 
+## results
+initially overfitted hard — val loss diverged early. fixed by:
+- increased dropout from 0.05 → 0.1
+- reduced learning rate from 2e-4 → 1e-4
+
+got better results after that but val loss still crept up after step 300 — expected with a small LoRA rank on a complex task like Text-to-SQL.
+
+training loss: 1.5 → 0.5
+mean token accuracy: 0.68 → 0.87
+
 ## adapter
 
-pushed to `Awan8754/llama3.1-text2sql-adapter` on HuggingFace along with MLflow run artifacts.
+pushed to HuggingFace along with MLflow run artifacts.
+See it on : https://huggingface.co/Awan8754/llama_nl_to_sql/tree/main

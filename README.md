@@ -46,9 +46,10 @@ SQL
 training loss went from ~0.70 → ~0.43 over 800+ steps. val loss started diverging a bit after step 300 (expected with small LoRA on a complex task).
 
 ## Mlflow metrics
-- Loss
-  <img width="1365" height="781" alt="image" src="https://github.com/user-attachments/assets/d752cad7-9ace-448f-85b8-0b5e7c82211f" />
-- Mean token Accuracy
+ ### Loss
+  <img width="566" height="507" alt="image" src="https://github.com/user-attachments/assets/e6ff227d-ea83-410a-9591-e4eb013a8b96" />
+
+ ### Mean token Accuracy 
   <img width="1365" height="781" alt="image" src="https://github.com/user-attachments/assets/6a7f10d8-22a3-4f8e-9775-0f7fb1d05c1a" />
 
 ## adapter
